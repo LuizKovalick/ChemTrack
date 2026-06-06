@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Adicionar Conteúdo - ChemTrack</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1 class="titulo">➕ Adicionar Novo Conteúdo</h1>
+
+    <form th:action="@{/conteudos/admin/save}" method="post" class="form-card">
+        
+        <label for="titulo">Título:</label>
+        <input type="text" id="titulo" name="titulo" placeholder="Digite o título" required>
+
+        
+        <label for="descricao">Descrição:</label>
+        <textarea id="descricao" name="descricao" rows="3" placeholder="Breve descrição" required></textarea>
+
+        
+        <label for="tipo">Tipo de Conteúdo:</label>
+        <select id="tipo" name="tipo" required>
+            <option value="">-- Selecione --</option>
+            <option value="PDF">📄 PDF</option>
+            <option value="VIDEO">🎥 Vídeo</option>
+            <option value="TEXTO">📝 Texto</option>
+        </select>
+
+        
+        <label for="url">URL ou Texto:</label>
+        <textarea id="url" name="url" rows="4" placeholder="Insira o link ou o texto aqui" required></textarea>
+
+        <button type="submit" class="btn">Salvar Conteúdo</button>
+    </form>
+
+    <div class="btn-group">
+        <a th:href="@{/conteudos}" class="btn-voltar">⬅ Voltar para Conteúdos</a>
+    </div>
+</div>
+</body>
+</html>

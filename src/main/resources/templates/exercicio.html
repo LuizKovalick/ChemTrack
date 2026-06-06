@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="'Exercício - ' + ${exercicio.pergunta}"></title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-logo">
+            <img th:src="@{/img/LogoFinalColor.png}" alt="ChemTrack Logo" class="logo">
+            <span class="navbar-title">ChemTrack</span>
+        </div>
+        <nav class="navbar-links">
+            <a th:href="@{/dashboard}" class="btn-dashboard">Dashboard</a>
+            <a th:href="@{/dashboard/logout}" class="btn-logout">Logoff</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="card">
+            <h2 th:text="${exercicio.pergunta}"></h2>
+            <form th:action="@{/exercicios/responder/{id}(id=${exercicio.id})}" method="post">
+                <div class="alternativas-container">
+                    <label>
+                        <input type="radio" name="resposta" th:value="${exercicio.alternativaCorreta}" required>
+                        <span th:text="${exercicio.alternativaCorreta}"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="resposta" th:value="${exercicio.alternativa1}" required>
+                        <span th:text="${exercicio.alternativa1}"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="resposta" th:value="${exercicio.alternativa2}" required>
+                        <span th:text="${exercicio.alternativa2}"></span>
+                    </label>
+                    <label>
+                        <input type="radio" name="resposta" th:value="${exercicio.alternativa3}" required>
+                        <span th:text="${exercicio.alternativa3}"></span>
+                    </label>
+					<a>|| </a><button type="submit">Responder</button>
+                </div>
+            </form>
+            <p><small th:text="'Este exercício vale ' + ${exercicio.pontos} + ' pontos'"></small></p>
+        </div>
+    </main>
+</body>
+</html>

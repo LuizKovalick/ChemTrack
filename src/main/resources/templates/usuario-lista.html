@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Ranking de Usuários - ChemTrack</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    
+	<header class="navbar">
+		    <div class="navbar-logo">
+		        <img th:src="@{/img/LogoFinalColor.png}" alt="Logo ChemTrack" class="logo">
+		        <span class="navbar-title">ChemTrack</span>
+		    </div>
+		    <nav class="navbar-links">
+		        <a th:href="@{/dashboard}">Dashboard</a>
+		    </nav>
+		</header>
+	
+	<div>
+	
+    <div class="form-container">
+        <h2>Ranking de Usuários</h2>
+
+        <table class="styled-table">
+            <thead>
+                <tr>
+                    <th>Posição</th>
+                    <th>Nome</th>
+                    <th>Pontos</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="usuario, iterStat : ${usuarios}">
+                    <td th:text="${iterStat.index + 1} + 'º'"></td>
+                    <td th:text="${usuario.nome}"></td>
+                    <td th:text="${usuario.pontos}"></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

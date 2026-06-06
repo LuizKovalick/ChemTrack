@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${conteudo.titulo} + ' - ChemTrack'"></title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+    <header class="navbar">
+        <div class="navbar-logo">
+            <img th:src="@{/img/LogoFinalColor.png}" alt="ChemTrack Logo" class="logo">
+            <span class="navbar-title">ChemTrack</span>
+        </div>
+        <nav class="navbar-links">
+            <a th:href="@{/dashboard}" class="btn-dashboard">Dashboard</a>
+            <a th:href="@{/dashboard/logout}" class="btn-logout">Logoff</a>
+        </nav>
+    </header>
+
+    <main class="container">
+        <div class="conteudo-completo">
+            <h1 th:text="${conteudo.titulo}"></h1>
+            <div th:if="${conteudo.urlVideo != null}">
+                <div class="video-container">
+                    <iframe width="560" height="315" th:src="@{'https://www.youtube.com/embed/' + ${videoId}}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
+            </div>
+            
+            <div th:if="${conteudo.urlPdf != null}">
+                <h2>Documento em PDF</h2>
+                <a th:href="${conteudo.urlPdf}" target="_blank">Abrir PDF em nova aba</a>
+            </div>
+
+            <div th:if="${conteudo.texto != null}">
+                <h1></h1>
+                <p th:text="${conteudo.texto}"></p>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

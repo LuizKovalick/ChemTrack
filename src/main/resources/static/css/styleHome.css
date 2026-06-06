@@ -1,0 +1,82 @@
+/* Barra de navegação */
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: #003366;
+    padding: 10px 20px;
+	border-radius: 12px;
+	border: 2px solid #002244;
+}
+
+/* Logo + título */
+.navbar-logo {
+    display: flex;
+    align-items: center;
+}
+
+.navbar-logo img {
+    height: 40px;
+    margin-right: 10px;
+}
+
+.navbar-title {
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Links */
+.navbar-links {
+    display: flex;
+    gap: 20px; 
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    padding: 8px 14px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.navbar-links a:hover {
+    background-color: #0055aa;
+}
+
+.navbar-links a.active {
+    background-color: #007bff;
+    color: white;
+}
+
+
+/*home*/
+.home-container {
+    max-width: 900px;
+    margin: 100px auto 40px;
+    padding: 20px;
+    text-align: center;
+}
+
+.home-container h1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: #003366;
+    margin-bottom: 20px;
+}
+
+.home-container p {
+    font-size: 18px;
+    line-height: 1.6;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+
+.home-card {
+    background-color: #f8f8f8;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    margin-top: 20px;
+}

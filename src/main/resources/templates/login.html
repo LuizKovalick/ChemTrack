@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - ChemTrack</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<header class="navbar">
+	    <div class="navbar-logo">
+	        <img th:src="@{/img/LogoFinalColor.png}" alt="Logo ChemTrack" class="logo">
+	        <span class="navbar-title">ChemTrack</span>
+	    </div>
+	    <nav class="navbar-links">
+	        <a th:href="@{/}">Início</a>
+	        <a th:href="@{/usuarios/cadastro}">Cadastro</a>
+	    </nav>
+	</header>
+
+    <div class="form-container">
+        <h2>Login</h2>
+        <!-- Agora o form vai direto para a lista de usuários -->
+        <form th:action="@{/login}" method="post">
+			<label for="email">Email:</label>
+            <input type="email" name="email" placeholder="E-mail" required>
+			<label for="senha">Senha:</label>
+            <input type="password" name="senha" placeholder="Senha" required>
+            <button type="submit">Entrar</button>
+        </form>
+    </div>
+</body>
+</html>

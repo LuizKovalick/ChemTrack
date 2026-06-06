@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Dashboard - ChemTrack</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+	<header class="navbar">
+	    <div class="navbar-logo">
+			<img th:src="@{/img/LogoFinalColor.png}" alt="ChemTrack Logo" class="logo">
+	        <span class="navbar-title">ChemTrack</span>
+	    </div>
+	    <nav class="navbar-links">
+			<span th:text="'Bem-vindo(a), ' + ${usuario.nome} +'.'"></span>
+			 <span>Seus Pontos: <b th:text="${usuario.pontos}"></b></span>
+			 <a th:href="@{/usuarios/lista}" class="btn-logout">Ranking</a>
+			 <a th:href="@{'/usuarios/perfil/' + ${usuario.id}}" class="btn-perfil">Meu Perfil</a>
+			 <a th:href="@{/dashboard/logout}" class="btn-logout">Logoff</a>
+	    </nav>
+	</header>
+
+    <main class="container">
+		<section>
+		    <h2>📚 Conteúdos </h2>
+		    <div class="cards">
+		        <div class="card" th:each="conteudo : ${conteudos}">
+		            <h3 th:text="${conteudo.titulo}"></h3>
+		            <a th:href="@{'/conteudos/' + ${conteudo.id}}" class="btn-acessar">Acessar Conteúdo</a>
+		        </div>
+		    </div>	
+		</section>
+
+		<section>
+		    <h2>🧪 Desafios</h2>
+		    <div class="cards">
+		        <div class="card" th:each="exercicio : ${exercicios}">
+		            <h3 th:text="${exercicio.pergunta}"></h3>
+		            <a th:href="@{'/exercicios/' + ${exercicio.id}}" class="btn-acessar">Responder</a>
+		            <p><small th:text="'Vale ' + ${exercicio.pontos} + ' pontos'"></small></p>
+		        </div>
+		    </div>
+		</section>
+    </main>
+</body>
+</html>

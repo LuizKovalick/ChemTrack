@@ -1,0 +1,27 @@
+<div class="header">
+    <img th:src="@{/img/logo.png}" alt="Logo ChemTrack">
+    <h1>ChemTrack</h1>
+    <div class="nav">
+		
+		<div th:fragment="header">
+		        <header style="background-color: #004aad; color: white; padding: 10px;">
+		            <h2 style="margin:0; display:inline;">ChemTrack</h2>
+		            <nav style="float: right;">
+		                <a href="/login" style="color:white; margin-right: 10px;">Login</a>
+		                <a href="/usuarios/cadastro" style="color:white;">Cadastro</a>
+		            </nav>
+		        </header>
+		    </div>
+        <a th:if="${page == 'login'}" th:href="@{/cadastro}">Cadastro</a>
+		
+        <a th:if="${page == 'cadastro'}" th:href="@{/login}">Login</a>
+		
+        <a th:if="${page == 'home'}" th:href="@{/desafios}">Desafios</a>
+		
+        <a th:if="${page == 'home'}" th:href="@{/conteudos}">Conteúdos</a>
+		
+        <a th:if="${page == 'home'}" th:href="@{/logout}">Sair</a>
+		
+    </div>
+</div>
+

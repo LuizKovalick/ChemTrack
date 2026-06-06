@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Login Admin - ChemTrack</title>
+    <link rel="stylesheet" th:href="@{/css/style.css}">
+</head>
+<body>
+<div class="container">
+    <h1 class="titulo">🔐 Área do Administrador</h1>
+
+    <form th:action="@{/conteudos/admin}" method="post" class="form-card">
+        <label for="senha">Digite a senha especial:</label>
+        <input type="password" id="senha" name="senha" required>
+        <button type="submit" class="btn">Entrar</button>
+    </form>
+
+    <div th:if="${param.erro}" class="erro">
+        <p>Senha incorreta! ❌</p>
+    </div>
+
+    <a th:href="@{/conteudos}" class="btn-voltar">⬅ Voltar</a>
+</div>
+</body></html>

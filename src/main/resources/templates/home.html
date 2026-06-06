@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Bem-vindo - ChemTrack</title>
+    <link rel="stylesheet" th:href="@{/css/styleHome.css}">
+</head>
+<body>
+
+<!-- Barra de navegação -->
+<header class="navbar">
+    <div class="navbar-logo">
+        <img th:src="@{/img/LogoFinalColor.png}" alt="Logo ChemTrack" class="logo">
+        <span class="navbar-title">ChemTrack</span>
+    </div>
+    <nav class="navbar-links">
+        <a th:href="@{/}" class="active">Início</a>
+        <a th:href="@{/usuarios/cadastro}">Cadastro</a>
+        <a th:href="@{/login}">Login</a>
+    </nav>
+</header>
+
+<!-- Conteúdo principal -->
+<main class="home-container">
+    <h1>Bem-vindo(a) ao ChemTrack</h1>
+    <p>
+        O <strong>ChemTrack</strong> é uma plataforma gamificada desenvolvida para auxiliar
+        estudantes no aprendizado de <strong>Química</strong>.  
+    </p>
+    <p>
+        Através de <em>exercícios interativos</em>, <em>pontuações</em>, <em>níveis</em> e <em>insígnias</em>, 
+        buscamos tornar o processo de estudo mais <strong>dinâmico, motivador e eficaz</strong>.
+    </p>
+    <p>
+        Comece agora sua jornada e descubra uma nova forma de aprender Química!
+    </p>
+
+
+</main>
+
+</body>
+</html>
